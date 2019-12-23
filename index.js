@@ -4,6 +4,7 @@ const express = require('express'),
 
 app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.render('login');

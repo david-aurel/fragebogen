@@ -1,0 +1,11 @@
+{
+  "name": "fragebogen",
+  "version": "1.0.0",
+  "description": "a digitalized experience of max frisch's 'fragebogen'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "david aurel",
+  "license": "ISC"
+}

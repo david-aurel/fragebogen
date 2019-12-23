@@ -6,7 +6,11 @@ app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('login');
+});
+
+app.get('/main', (req, res) => {
+    res.render('questions');
 });
 
 app.listen(8080, () => console.log('listening...'));

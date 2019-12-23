@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* log in */
+.purple,
+.blue {
+    width: 100%;
+}
+.purple {
+    background: #362a52;
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.purple h1 {
+    display: inline-block;
+    color: white;
+    font-size: 6em;
+    font-weight: 200;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.login {
+    margin: 50px 100px 0 0;
+}
+.login form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.blue {
+    background: #2883c6;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.blue li {
+    color: #271e3b;
+    font-size: 2em;
+    line-height: 1.4em;
+}

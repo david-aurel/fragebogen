@@ -9,29 +9,34 @@
 .blue {
     width: 100%;
 }
+
 .purple {
     background: #362a52;
     height: 40vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .purple h1 {
     display: inline-block;
     color: white;
-    font-size: 6em;
+    font-size: 10vh;
     font-weight: 200;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: 10px;
 }
 
 .login {
-    margin: 50px 100px 0 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .login form {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 150px;
+    align-items: center;
 }
 
 .blue {
@@ -41,7 +46,25 @@
 }
 
 .blue li {
+    margin: 05px 30px 0 15px;
     color: #271e3b;
-    font-size: 2em;
+    font-size: 3.5vh;
     line-height: 1.4em;
+}
+
+@media (min-width: 600px) {
+    .purple {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .login {
+        align-items: flex-start;
+        margin: 40px 100px 0 0;
+    }
+    .purple h1 {
+        font-size: 12vh;
+    }
+    .blue li {
+        font-size: 4vh;
+    }
 }

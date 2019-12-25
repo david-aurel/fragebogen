@@ -68,3 +68,19 @@
         font-size: 4vh;
     }
 }
+
+/* main */
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main {
+    width: 50%;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+.main p {
+    margin-top: 30px;
+}

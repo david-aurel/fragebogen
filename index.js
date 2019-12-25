@@ -14,4 +14,10 @@ app.get('/main', (req, res) => {
     res.render('questions');
 });
 
+app.post('/', (req, res) => {
+    console.log('fire');
+
+    res.redirect('/main');
+});
+
 app.listen(8080, () => console.log('listening...'));

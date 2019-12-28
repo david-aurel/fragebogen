@@ -84,3 +84,11 @@
 .main p {
     margin-top: 30px;
 }
+
+.main .answer {
+    display: none;
+}
+
+.main .highlight {
+    display: inline-block;
+}

@@ -1,6 +1,7 @@
 const express = require('express'),
     app = express(),
-    hb = require('express-handlebars');
+    hb = require('express-handlebars'),
+    questionsArr = require('./questions.json');
 
 app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
@@ -11,12 +12,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
-    res.render('questions');
+    res.render('questions', {
+        questionsArr
+    });
 });
 
 app.post('/', (req, res) => {
-    console.log('fire');
-
     res.redirect('/main');
 });
 

@@ -1,8 +1,8 @@
 const express = require('express'),
     app = express(),
     hb = require('express-handlebars'),
-    questionsArr = require('./questions.json'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    questionsArr = require('./questions.json');
 
 app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
@@ -15,9 +15,11 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     let username = req.body.username;
+    const data = require(`./data/${username}.json`);
 
     res.render('questions', {
-        questionsArr
+        questionsArr,
+        data
     });
 });
 

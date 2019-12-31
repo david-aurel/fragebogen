@@ -19,7 +19,12 @@ app.post('/', (req, res) => {
 
     res.render('questions', {
         questionsArr,
-        data
+        data,
+        helpers: {
+            answer(id) {
+                return data['0'][id];
+            }
+        }
     });
 });
 

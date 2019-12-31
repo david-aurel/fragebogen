@@ -2,6 +2,7 @@ const express = require('express'),
     app = express(),
     hb = require('express-handlebars'),
     bodyParser = require('body-parser'),
+    fs = require('fs'),
     questionsArr = require('./questions.json');
 
 app.engine('handlebars', hb());
@@ -15,7 +16,8 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     let username = req.body.username;
-    const data = require(`./data/${username}.json`);
+    const fileName = `./data/${username}.json`;
+    const data = require(fileName);
 
     res.render('questions', {
         questionsArr,
@@ -26,6 +28,11 @@ app.post('/', (req, res) => {
             }
         }
     });
+});
+
+app.post('/save', (req, res) => {
+    console.log('post request to /save');
+    console.log(req.body.answer);
 });
 
 app.listen(8080, () => console.log('listening...'));

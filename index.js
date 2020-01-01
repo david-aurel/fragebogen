@@ -26,17 +26,24 @@ app.post('/', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
-    data = require(filePath);
+    try {
+        data = require(filePath);
 
-    res.render('questions', {
-        questionsArr,
-        data,
-        helpers: {
-            answer(id) {
-                return data['0'][id];
+        res.render('questions', {
+            questionsArr,
+            data,
+            helpers: {
+                answer(id) {
+                    return data['0'][id];
+                }
             }
-        }
-    });
+        });
+    } catch {
+        const newfileContent = [{ name: `${username}` }];
+        let newFilePath = `./data/${username}.json`;
+        fs.writeFileSync(newFilePath, JSON.stringify(newfileContent, null, 4));
+        res.redirect('/main');
+    }
 });
 
 app.post('/main', (req, res) => {
@@ -46,7 +53,7 @@ app.post('/main', (req, res) => {
 
     data['0'][answerId] = answerVal;
 
-    fs.writeFileSync('./data/david.json', JSON.stringify(data, null, 4));
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 4));
     res.redirect('/main');
 });
 

@@ -5,6 +5,10 @@ const express = require('express'),
     fs = require('fs'),
     questionsArr = require('./questions.json');
 
+let username = '',
+    filePath = '',
+    data = '';
+
 app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
@@ -15,9 +19,14 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-    let username = req.body.username;
-    const fileName = `./data/${username}.json`;
-    const data = require(fileName);
+    username = req.body.username;
+    filePath = `./data/${username}.json`;
+
+    res.redirect('/main');
+});
+
+app.get('/main', (req, res) => {
+    data = require(filePath);
 
     res.render('questions', {
         questionsArr,
@@ -30,9 +39,15 @@ app.post('/', (req, res) => {
     });
 });
 
-app.post('/save', (req, res) => {
-    console.log('post request to /save');
-    console.log(req.body.answer);
+app.post('/main', (req, res) => {
+    let answer = req.body,
+        answerId = Object.keys(answer)[0],
+        answerVal = req.body[answerId];
+
+    data['0'][answerId] = answerVal;
+
+    fs.writeFileSync('./data/david.json', JSON.stringify(data, null, 4));
+    res.redirect('/main');
 });
 
 app.listen(8080, () => console.log('listening...'));

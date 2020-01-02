@@ -30,25 +30,121 @@
         "2": [
             {
                 "title": "1.",
-                "text": "Zweiter Fragebogen, Erste Frage",
+                "text": "Ist die Ehe für Sie noche ein Problem?",
                 "id": "f2a1"
             },
             {
                 "title": "2.",
-                "text": "Zweiter Fragebogen, zweite Frage",
+                "text": "Wann überzeugt Sie die Ehe als Einrichtung mehr: wenn Sie diese bei andern sehen oder in Ihrem eignen Fall?",
                 "id": "f2a2"
             }
         ],
         "3": [
             {
                 "title": "1.",
-                "text": "Dritter Fragebogen, Erste Frage",
+                "text": "Tun Ihnen die Frauen leid?",
                 "id": "f3a1"
             },
             {
                 "title": "2.",
-                "text": "Dritter Fragebogen, zweite Frage",
+                "text": "Warum? (Warum nicht?)",
                 "id": "f3a2"
+            }
+        ],
+        "4": [
+            {
+                "title": "1.",
+                "text": "Wissen Sie in der Regel, was Sie hoffen?",
+                "id": "f4a1"
+            },
+            {
+                "title": "2.",
+                "text": "Wie oft muß eine bestimmte Hoffnung (z.B. eine politische) sich nicht erfüllen, damit Sie die betroffene Hoffnung aufgeben, und gelingt Ihnen dies, ohne sich sofort eine andere Hoffnung zu machen?",
+                "id": "f4a2"
+            }
+        ],
+        "5": [
+            {
+                "title": "1.",
+                "text": "Wenn Sie jemand dazu bringen, daß er den Humor verliert, (z.B. weil sie seine Scham verletzt haben), und wenn SIe dann feststellen, der betroffene Mensch habe keinen Humor: finden Sie, daß Sie deswegen Humor haben, weil Sie jetzt über ihn lachen?",
+                "id": "f5a1"
+            },
+            {
+                "title": "2.",
+                "text": "Wie unterscheiden sich Witz und Humor?",
+                "id": "f5a2"
+            }
+        ],
+        "6": [
+            {
+                "title": "1.",
+                "text": "Hassen Sie Bargeld?",
+                "id": "f6a1"
+            },
+            {
+                "title": "2.",
+                "text": "Warum?",
+                "id": "f6a2"
+            }
+        ],
+        "7": [
+            {
+                "title": "1.",
+                "text": "Halten Sie sich für einen guten Freund?",
+                "id": "f7a1"
+            },
+            {
+                "title": "2.",
+                "text": "Was empfinden Sie als Verrat:? a. wenn der andere es tut? b. wenn Sie es tun?",
+                "id": "f7a2"
+            }
+        ],
+        "8": [
+            {
+                "title": "1.",
+                "text": "Sind Sie stolz darauf, Vater zu sein?",
+                "id": "f8a1"
+            },
+            {
+                "title": "",
+                "text": "Mögen Sie Kinder allgemein?",
+                "id": "f8a2"
+            }
+        ],
+        "9": [
+            {
+                "title": "1.",
+                "text": "Wenn Sie sich in der Fremde aufhalten und Landsleute treffen: befällt Sie dann Heimweh oder dann gerade nicht?",
+                "id": "f9a1"
+            },
+            {
+                "title": "2.",
+                "text": "Hat Heimat für Sie eine Flagge?",
+                "id": "f9a2"
+            }
+        ],
+        "10": [
+            {
+                "title": "1.",
+                "text": "Können Sie sich daran erinnern, seit welchem Lebensjahr es Ihnen selbstverständlich ist, daß Ihnen etwas gehört, beziehungsweise eben nicht gehört?",
+                "id": "f10a1"
+            },
+            {
+                "title": "2.",
+                "text": "Wem gehört Ihres Erachtens beispielsweise die Luft?",
+                "id": "f10a2"
+            }
+        ],
+        "11": [
+            {
+                "title": "1.",
+                "text": "Haben Sie Angst vor dem Tod und seit welchem Lebensjahr?",
+                "id": "f11a1"
+            },
+            {
+                "title": "2.",
+                "text": "Was tun Sie dagegen?",
+                "id": "f11a2"
             }
         ]
     }

@@ -27,8 +27,8 @@ app.post('/', (req, res) => {
     res.redirect('/main');
 });
 
-app.post('/topic', (req, res) => {
-    num = req.body.topic;
+app.get('/topic/:num', (req, res) => {
+    num = req.params.num;
     res.redirect('/main');
 });
 
@@ -36,7 +36,6 @@ app.get('/main', (req, res) => {
     try {
         data = require(filePath);
         let questionsArrSelect = questionsArr[0][num];
-        console.log(questionsArrSelect);
 
         res.render('questions', {
             questionsArrSelect,

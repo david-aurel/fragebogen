@@ -7,7 +7,9 @@ const express = require('express'),
 
 let username = '',
     filePath = '',
-    data = '';
+    data = '',
+    topicSelection = [1, 2, 3],
+    num = 1;
 
 app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
@@ -25,6 +27,11 @@ app.post('/', (req, res) => {
     res.redirect('/main');
 });
 
+app.post('/topic', (req, res) => {
+    num = req.body.topic;
+    res.redirect('/main');
+});
+
 app.get('/main', (req, res) => {
     try {
         data = require(filePath);
@@ -35,6 +42,9 @@ app.get('/main', (req, res) => {
             helpers: {
                 answer(id) {
                     return data['0'][id];
+                },
+                topic() {
+                    return topicSelection[num - 1];
                 }
             }
         });

@@ -7,7 +7,16 @@
     </div>
 
     <div class="title">
-        <h1>Fragebogen 1: <br> Die Erhaltung des Menschengeschlechts</h1>
+        <form action='/topic' method="POST">
+            <select name="topic" id="topic">
+                <option name="option0" value="0">Thema</option>
+                <option name="option1" value="1">Die Erhaltung des Menschengeschlechts</option>
+                <option name="option2" value="2">Ehe</option>
+                <option name="option3" value="3">Frauen</option>
+            </select>
+            <button>Go</button>
+        </form>
+        <h1>{{topic}}</h1>
         <button>></button>
     </div>
 

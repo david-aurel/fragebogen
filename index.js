@@ -8,7 +8,7 @@ const express = require('express'),
 let username = '',
     filePath = '',
     data = '',
-    topicSelection = [1, 2, 3],
+    topicSelection = ['Die Erhaltung des Menschengeschlechts', 'Ehe', 'Frauen'],
     num = 1;
 
 app.engine('handlebars', hb());
@@ -35,9 +35,11 @@ app.post('/topic', (req, res) => {
 app.get('/main', (req, res) => {
     try {
         data = require(filePath);
+        let questionsArrSelect = questionsArr[0][num];
+        console.log(questionsArrSelect);
 
         res.render('questions', {
-            questionsArr,
+            questionsArrSelect,
             data,
             helpers: {
                 answer(id) {

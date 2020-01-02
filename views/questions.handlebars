@@ -9,7 +9,7 @@
     <div class="title">
         <form action='/topic' method="POST">
             <select name="topic" id="topic">
-                <option name="option0" value="0">Thema</option>
+                <option name="option0" value="">Thema</option>
                 <option name="option1" value="1">Die Erhaltung des Menschengeschlechts</option>
                 <option name="option2" value="2">Ehe</option>
                 <option name="option3" value="3">Frauen</option>
@@ -17,7 +17,6 @@
             <button>Go</button>
         </form>
         <h1>{{topic}}</h1>
-        <button>></button>
     </div>
 
     <div class="logout">
@@ -28,7 +27,7 @@
 </div>
 
 <div class="main">
-    {{#questionsArr}}
+    {{#questionsArrSelect}}
     <p>{{title}}<br>{{text}}</p>
     <div class="answer">
         <form action='/main' method="POST">
@@ -36,5 +35,5 @@
             <button>save</button>
         </form>
     </div>
-    {{/questionsArr}}
+    {{/questionsArrSelect}}
 </div>

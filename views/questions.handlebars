@@ -1,39 +1,44 @@
-<div class="header">
-    <div class="version">
-        <p>Mein Fragebogen 1</p>
-        <p>Mein Fragebogen 2</p>
-        <p>Mein Fragebogen 3</p>
-        <button>+</button>
+<div class="mainContainer">
+
+    <div class="select">
+        <a href="/topic/1">Die Erhaltung des Menschengeschlechts</a>
+        <a href="/topic/2">Ehe</a>
+        <a href="/topic/3">Frauen</a>
+        <a href="/topic/4">Hoffnung</a>
+        <a href="/topic/5">Humor</a>
+        <a href="/topic/6">Geld</a>
+        <a href="/topic/7">Freundschaft</a>
+        <a href="/topic/8">Vatersein</a>
+        <a href="/topic/9">Heimat</a>
+        <a href="/topic/10">Eigentum</a>
+        <a href="/topic/11">Tod</a>
+    </div>
+    <div class="header">
+
+
+        <div class="logout">
+            <a href="/">
+                <button>Logout</button>
+            </a>
+        </div>
     </div>
 
-    <div class="title">
-        <form action='/topic' method="POST">
-            <select name="topic" id="topic">
-                <option name="option0" value="">Thema</option>
-                <option name="option1" value="1">Die Erhaltung des Menschengeschlechts</option>
-                <option name="option2" value="2">Ehe</option>
-                <option name="option3" value="3">Frauen</option>
-            </select>
-            <button>Go</button>
-        </form>
-        <h1>{{topic}}</h1>
+    <div class="main">
+        <div class="title">
+            <h1>{{topic}}</h1>
+        </div>
+
+        <div class="questions">
+            {{#questionsArrSelect}}
+            <p>{{title}}<br>{{text}}</p>
+            <div class="answer">
+                <form action='/main' method="POST">
+                    <input type="text" id="{{id}}" name='{{id}}' value="{{answer id}}">
+                    <button>save</button>
+                </form>
+            </div>
+            {{/questionsArrSelect}}
+        </div>
     </div>
 
-    <div class="logout">
-        <a href="/">
-            <button>Logout</button>
-        </a>
-    </div>
-</div>
-
-<div class="main">
-    {{#questionsArrSelect}}
-    <p>{{title}}<br>{{text}}</p>
-    <div class="answer">
-        <form action='/main' method="POST">
-            <input type="text" id="{{id}}" name='{{id}}' value="{{answer id}}">
-            <button>save</button>
-        </form>
-    </div>
-    {{/questionsArrSelect}}
 </div>

@@ -8,7 +8,19 @@ const express = require('express'),
 let username = '',
     filePath = '',
     data = '',
-    topicSelection = ['Die Erhaltung des Menschengeschlechts', 'Ehe', 'Frauen'],
+    topic = [
+        'Die Erhaltung des Menschengeschlechts',
+        'Ehe',
+        'Frauen',
+        'Hoffnung',
+        'Humor',
+        'Geld',
+        'Freundschaft',
+        'Vatersein',
+        'Heimat',
+        'Eigentum',
+        'Tod'
+    ],
     num = 1;
 
 app.engine('handlebars', hb());
@@ -45,7 +57,7 @@ app.get('/main', (req, res) => {
                     return data['0'][id];
                 },
                 topic() {
-                    return topicSelection[num - 1];
+                    return topic[num - 1];
                 }
             }
         });

@@ -117,8 +117,23 @@
 
 .main .answer {
     display: none;
+    width: 100%;
 }
 
+.answer-save {
+    display: none;
+}
 .main .highlight {
     display: inline-block;
+}
+
+.main textarea {
+    color: #2883c6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    width: 100%;
 }

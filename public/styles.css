@@ -118,6 +118,9 @@
 .main .answer {
     display: none;
     width: 100%;
+    position: relative;
+    border: 1px solid #888;
+    background: #fff;
 }
 
 .answer-save {
@@ -136,8 +139,8 @@
     border: none;
     margin-top: 10px;
     width: 100%;
-    max-height: 600px;
     resize: none;
+    overflow-y: visible;
 }
 
 .main textarea::placeholder {

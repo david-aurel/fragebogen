@@ -33,9 +33,9 @@
             <p>{{title}}<br>{{text}}</p>
             <div class="answer">
                 <form action='/main' method="POST">
-                    <textarea rows='1' id="{{id}}" name='{{id}}' value="{{answer id}}"
+                    <textarea id="{{id}}" name='{{id}}' value="{{answer id}}"
                         placeholder="Antwort">{{answer id}}</textarea>
-                    <button class="answer-save">save</button>
+                    {{!-- <button class="answer-save">save</button> --}}
                 </form>
             </div>
             {{/questionsArrSelect}}

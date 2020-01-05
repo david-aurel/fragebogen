@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     username = req.body.username;
-    filePath = `./data/${username}.json`;
+    filePath = `${__dirname}/data/${username}.json`;
 
     res.redirect('/main');
 });

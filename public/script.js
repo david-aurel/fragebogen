@@ -38,34 +38,39 @@ function highlight() {
 }
 highlight();
 
-//make textarea auto size themselves
-// autosize($('textarea'));
+//handle textarea behaviour
 function resizeTextarea() {
+    // autosize($('textarea'));
     // $('textarea').autoResize();
     let textarea = $('textarea');
 
     textarea.on('input', function() {
         let height = parseFloat(this.style.height);
         let scrollHeight = this.scrollHeight - height;
-        if (scrollHeight > 0) {
-            this.style.height = height + scrollHeight + 'px';
-        }
+
+        this.style.height = height + scrollHeight + 'px';
     });
+    //make it go to the right height after refresh
     for (let i = 0; i < textarea.length; i++) {
         let scrollHeight = textarea.eq(i)[0].scrollHeight;
-        $('textarea')
-            .eq(i)
-            .height(scrollHeight + 'px');
+        textarea.eq(i)[0].style.height = scrollHeight + 'px';
     }
-}
-resizeTextarea();
 
-// make textarea submit on enter keypress
-$('.main textarea').keypress(function(e) {
-    if (e.which == 13 && !e.shiftKey) {
+    // make textarea submit on enter keypress
+    textarea.keypress(function(e) {
+        if (e.which == 13 && !e.shiftKey) {
+            $(this)
+                .closest('form')
+                .submit();
+            e.preventDefault();
+        }
+    });
+
+    //make textarea submit when textarea loses focus
+    textarea.focusout(function() {
         $(this)
             .closest('form')
             .submit();
-        e.preventDefault();
-    }
-});
+    });
+}
+resizeTextarea();

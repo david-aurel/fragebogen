@@ -38,6 +38,16 @@ function highlight() {
 }
 highlight();
 
+//add highlightclass to topic list
+let title = $('.title h1').text(),
+    topic = $('.select a');
+
+for (let i = 0; i < topic.length; i++) {
+    if (topic.eq(i).text() === title) {
+        topic.eq(i).addClass('topicHighlight');
+    }
+}
+
 //handle textarea behaviour
 function resizeTextarea() {
     // autosize($('textarea'));

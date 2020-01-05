@@ -79,4 +79,4 @@ app.post('/main', (req, res) => {
     res.redirect('/main');
 });
 
-.listen(process.env.PORT || 8080)
+app.listen(process.env.PORT || 8080);

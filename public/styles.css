@@ -119,7 +119,6 @@
     display: none;
     width: 100%;
     position: relative;
-    border: 1px solid #888;
     background: #fff;
 }
 
@@ -137,12 +136,16 @@
     font-size: 1.1rem;
     outline: none;
     border: none;
+    border-bottom: 3px dotted lightgray;
     margin-top: 10px;
     width: 100%;
     resize: none;
-    overflow-y: visible;
 }
 
 .main textarea::placeholder {
     color: #d3e9f8;
+}
+
+.answer input[type='text'] {
+    display: none;
 }

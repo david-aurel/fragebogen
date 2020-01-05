@@ -2,21 +2,6 @@ const question = $('.main'),
     answers = $('.answer'),
     answersInput = $('.answer textarea');
 
-//make textarea auto size themselves
-// autosize($('textarea'));
-// $('textarea').autoResize();
-$('textarea').on('input', function() {
-    this.style.height = 'auto';
-    this.style.height = this.scrollHeight + 'px';
-    let lineCount = 0;
-    let lines = this.value;
-    let matches = lines.match(/\n/g);
-    let breaks = matches ? matches.length : 0;
-    console.log(lines);
-    console.log(matches);
-    console.log(breaks);
-});
-
 // toggle highlight class on answer field
 question.on('click', function(e) {
     const item = $(e.target).next();
@@ -52,6 +37,28 @@ function highlight() {
     }
 }
 highlight();
+
+//make textarea auto size themselves
+// autosize($('textarea'));
+function resizeTextarea() {
+    // $('textarea').autoResize();
+    let textarea = $('textarea');
+
+    textarea.on('input', function() {
+        let height = parseFloat(this.style.height);
+        let scrollHeight = this.scrollHeight - height;
+        if (scrollHeight > 0) {
+            this.style.height = height + scrollHeight + 'px';
+        }
+    });
+    for (let i = 0; i < textarea.length; i++) {
+        let scrollHeight = textarea.eq(i)[0].scrollHeight;
+        $('textarea')
+            .eq(i)
+            .height(scrollHeight + 'px');
+    }
+}
+resizeTextarea();
 
 // make textarea submit on enter keypress
 $('.main textarea').keypress(function(e) {

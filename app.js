@@ -70,9 +70,8 @@ app.get('/main', (req, res) => {
 });
 
 app.post('/main', (req, res) => {
-    let answer = req.body,
-        answerId = Object.keys(answer)[0],
-        answerVal = req.body[answerId];
+    let answer = req.body;
+    (answerId = Object.keys(answer)[0]), (answerVal = req.body[answerId]);
 
     data['0'][answerId] = answerVal;
 
@@ -80,4 +79,4 @@ app.post('/main', (req, res) => {
     res.redirect('/main');
 });
 
-app.listen(8080, () => console.log('listening...'));
+.listen(process.env.PORT || 8080)

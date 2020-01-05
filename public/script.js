@@ -25,6 +25,8 @@ function highlight() {
             parent.addClass('highlight');
         }
     }
+
+    //always add it to the first one
     for (let i = 0; i < answersInput.length; i++) {
         if (!answersInput[i].value) {
             answersInput
@@ -36,17 +38,44 @@ function highlight() {
         }
     }
 }
+
 highlight();
 
-//add highlightclass to topic list
-let title = $('.title h1').text(),
-    topic = $('.select a');
+//handle topic selection behaviour
+function topic() {
+    //add highlightclass to topic list
+    let title = $('.title h1').text(),
+        topic = $('.select a');
 
-for (let i = 0; i < topic.length; i++) {
-    if (topic.eq(i).text() === title) {
-        topic.eq(i).addClass('topicHighlight');
+    for (let i = 0; i < topic.length; i++) {
+        if (topic.eq(i).text() === title) {
+            topic.eq(i).addClass('topicHighlight');
+        }
     }
+
+    if (localStorage.getItem('topicExpand')) {
+        $('.selectWrapper i').addClass('turn');
+        $('.select').addClass('topicExpand');
+    }
+
+    function toggleExpand() {
+        if (localStorage.getItem('topicExpand')) {
+            $('.selectWrapper i').removeClass('turn');
+            $('.select').removeClass('topicExpand');
+            localStorage.removeItem('topicExpand');
+        } else {
+            $('.selectWrapper i').addClass('turn');
+            $('.select').addClass('topicExpand');
+            localStorage.setItem('topicExpand', true);
+        }
+    }
+
+    // toggle topic selection
+    $('.selectWrapper i').on('click', function() {
+        toggleExpand();
+    });
 }
+topic();
 
 //handle textarea behaviour
 function resizeTextarea() {
@@ -63,7 +92,11 @@ function resizeTextarea() {
     //make it go to the right height after refresh
     for (let i = 0; i < textarea.length; i++) {
         let scrollHeight = textarea.eq(i)[0].scrollHeight;
-        textarea.eq(i)[0].style.height = scrollHeight + 'px';
+        let elementHeight = textarea.eq(i)[0].style.height;
+
+        if (scrollHeight != 0) {
+            textarea.eq(i)[0].style.height = scrollHeight + 'px';
+        }
     }
 
     // make textarea submit on enter keypress

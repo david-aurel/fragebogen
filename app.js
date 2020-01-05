@@ -3,7 +3,7 @@ const express = require('express'),
     hb = require('express-handlebars'),
     bodyParser = require('body-parser'),
     fs = require('fs'),
-    questionsArr = require('./questions.json');
+    questionsArr = require(`${__dirname}/questions.json`);
 
 let username = '',
     filePath = '',
@@ -63,7 +63,7 @@ app.get('/main', (req, res) => {
         });
     } catch {
         const newfileContent = [{ name: `${username}` }];
-        let newFilePath = `./data/${username}.json`;
+        let newFilePath = `${__dirname}/data/${username}.json`;
         fs.writeFileSync(newFilePath, JSON.stringify(newfileContent, null, 4));
         res.redirect('/main');
     }

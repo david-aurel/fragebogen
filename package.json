@@ -1,15 +1,16 @@
 {
-  "name": "fragebogen",
-  "version": "1.0.0",
-  "description": "a digitalized experience of max frisch's 'fragebogen'",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "david aurel",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0"
-  }
+    "name": "fragebogen",
+    "version": "1.0.0",
+    "description": "a digitalized experience of max frisch's 'fragebogen'",
+    "main": "index.js",
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "david aurel",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0"
+    }
 }

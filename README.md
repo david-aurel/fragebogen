@@ -6,7 +6,7 @@ This is a response to when I was reading the book, but didn't want to have to ca
 
 ### Backend
 
-With a Node Express server up and running, user information gets handled. Instead of a database, user information gets stored and accessed trough server side JSON files, utilizing Node's core file system module.
+With a Node Express server up and running, user information gets handled. User information gets stored and accessed on server side JSON files, utilizing Node's core file system module. Update 1 year later. This was before I knew what databases were lol.
 
 Users can browse different chapters and questions.
 
